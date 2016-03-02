@@ -10,12 +10,13 @@ DECLARE CONTINUE HANDLER FOR NOT FOUND SET finished = 1;
  OPEN total_cst_cur;
  get_cost : LOOP 
 FETCH total_cst_cur INTO tc;
-SET total=total+tc;
 IF finished THEN
  LEAVE get_cost;
 END IF;
+SET total=total+tc;
+
+
  END LOOP get_cost;
  select total;
  close total_cst_cur;
 END;
-
