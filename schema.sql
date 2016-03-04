@@ -6,7 +6,7 @@ create table orders(order_id int,order_cost int,date date,primary key(order_id))
 
 create table items(product_id int ,price int(10),primary key(product_id));
 
-create table ordered(order_id int,product_id int);
+create table ordered(order_id int,product_id int,quantity int,sale_price int);
 
 create table customer(user_id int,order_id int,primary key(user_id));
 
